@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Towns Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            width: 100%;
+            height: 800px;
+            position: relative;
+        }
+        .town {
+            fill: red;
+            stroke: white;
+            stroke-width: 1.5px;
+        }
+        #loadingMessage {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .leaflet-control-button {
+            background-color: white;
+            border: 2px solid #007bff;
+            color: #007bff;
+            border-radius: 5px;
+            padding: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Map of Towns in the UK</h1>
+    <div>
+        <label for="townSlider">Select number of towns to load: </label>
+        <input type="range" id="townSlider" min="1" max="500" value="50" step="1">
+        <span id="townCount">50</span>
+    </div>
+    <div id="loadingMessage">Loading towns...</div>
+    <div id="map"></div>
+
+    <!-- Calling the Javascript function by an external call -->
+    <script src="UKMap_Assign.js"></script>
+</body>
+</html>
